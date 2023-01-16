@@ -4,9 +4,9 @@ import Header from "./Components/Header";
 import HeroSection from "./Components/HeroSection";
 
 const App = () => {
-  const [themehook] = useState("light");
+  const themeHook = useState("light");
   return (
-    <ThemeContext.Provider value={themehook}>
+    <ThemeContext.Provider value={themeHook}>
       <div>
         <Header />
         <HeroSection />

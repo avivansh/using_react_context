@@ -3,31 +3,30 @@ import ThemeContext from "../Context/ThemeContext";
 import AppTheme from "../Colors";
 
 const HeroSection = () => {
-  const theme = useContext(ThemeContext);
-  console.log(theme);
-  const currentTheme = AppTheme[theme];
-  console.log(currentTheme);
+  const theme = useContext(ThemeContext)[0];
+  const currectTheme = AppTheme[theme];
+
   return (
     <div
       style={{
         padding: "1rem",
-        backgroundColor: `${currentTheme.backgroundColor}`,
-        color: `${currentTheme.textColor}`,
+        backgroundColor: `${currectTheme.backgroundColor}`,
+        color: `${currectTheme.textColor}`,
         textAlign: "center",
       }}
     >
       <h1>Context API theme toggler</h1>
-      <p> This is a nice paragraph</p>
+      <p>This is a nice paragraph</p>
       <button
         style={{
           backgroundColor: "#26ae60",
           padding: "10px 150px",
           fontSize: "20px",
           color: "#FFF",
-          border: `${currentTheme.border}`,
+          border: `${currectTheme.border}`,
         }}
       >
-        Click me
+        CLick Me
       </button>
     </div>
   );
