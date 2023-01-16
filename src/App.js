@@ -4,9 +4,15 @@ import Header from "./Components/Header";
 import HeroSection from "./Components/HeroSection";
 
 const App = () => {
-  const themeHook = useState("light");
+  // state define
+  const [themeHook, setThemeHook] = useState("light");
+
+  // method for udpating state
+  const toggleTheme = () => {
+    setThemeHook(themeHook === "dark" ? "light" : "dark");
+  };
   return (
-    <ThemeContext.Provider value={themeHook}>
+    <ThemeContext.Provider value={{ themeHook, toggleTheme }}>
       <div>
         <Header />
         <HeroSection />

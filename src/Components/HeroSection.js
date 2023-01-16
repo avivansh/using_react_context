@@ -3,7 +3,8 @@ import ThemeContext from "../Context/ThemeContext";
 import AppTheme from "../Colors";
 
 const HeroSection = () => {
-  const theme = useContext(ThemeContext)[0];
+  const theme = useContext(ThemeContext).themeHook;
+  const changeTheme = useContext(ThemeContext).toggleTheme;
   const currectTheme = AppTheme[theme];
 
   return (
@@ -25,6 +26,7 @@ const HeroSection = () => {
           color: "#FFF",
           border: `${currectTheme.border}`,
         }}
+        onClick={changeTheme}
       >
         CLick Me
       </button>
